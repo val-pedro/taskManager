@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import todayImage from '../../assets/imgs/today.jpg'
 import Task from "../components/Task"
 import { useEffect, useState } from "react"
+import AddTask from "./AddTask"
 
 const taskDB = [
     {
@@ -82,7 +83,8 @@ export default function TaskList() {
 
     return(
         <View style={styles.container}>
-            <ImageBackground source={todayImage} style={styles.background}>
+            <AddTask />
+            <ImageBackground size={30} source={todayImage} style={styles.background}>
 
                 <View style={styles.iconBar}>
                     <TouchableOpacity onPress={toggleFilter}>
@@ -122,7 +124,8 @@ const styles = StyleSheet.create({
         flex: 1
     },
     background: {
-        flex: 3
+        flex: 3,
+
     },
     taskList: {
         flex: 7
