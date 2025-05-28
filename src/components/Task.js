@@ -14,7 +14,7 @@ export default props => {
     const date = props.doneAt ? props.doneAt : props.estimateAt
     const formattedDate = moment(date).tz('America/Sao_Paulo').locale('pt-br').format('ddd, D [de] MMMM')
 
-    const getLeftContent = () => {
+    const getRightContent = () => {
         return (
             <TouchableOpacity style={styles.right}
                 onPress={() => props.onDelete && props.onDelete(props.id)} >
@@ -25,7 +25,7 @@ export default props => {
 
     return (
         <Swipeable 
-            renderLeftActions={getLeftContent}
+            renderRightActions={getRightContent}
         >
 
             <View style={styles.container}>
